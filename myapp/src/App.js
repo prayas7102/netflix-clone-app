@@ -1,18 +1,11 @@
 import './App.css';
-import {StreamChat} from 'stream-chat';
-import {Channel, Chat} from 'stream-chat-react';
-import Cookies from 'universal-cookie';
-import { ChannelListContainer } from './components/ChannelListContainer';
-import { ChannelContainer } from './components/ChannelContainer';
-const api='suasqenc6s2x';
-const client=StreamChat.getInstance(api);
+import Row from './row';
+import requests from './request';
 function App() {
   return (
-    <div className="app__wrapper">
-      <Chat client={client} theme="team light">
-        <ChannelListContainer/>
-        <ChannelContainer/>
-      </Chat>
+    <div >
+     <Row title="Netflix Orignals" fetchUrl={requests.fetchNetflixOrignals}/>
+     <Row title="Trending Now" fetchUrl={requests.fetchTrending}/>
     </div>
   );
 }
