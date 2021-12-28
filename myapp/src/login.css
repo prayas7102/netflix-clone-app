@@ -1,0 +1,21 @@
+.loginscreen{
+    background-image: url("https://images.pexels.com/photos/7234214/pexels-photo-7234214.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-7234214.jpg&fm=jpg");
+    position: relative;
+    height: 100%;
+    background-size: cover;
+}
+.gradient{
+    width: 100%;
+    height: 100vh;
+    z-index:1;
+}
+.body{
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    color: blanchedalmond;
+    text-align: center;
+    margin-right: auto;
+    margin-left: 200px;
+    padding: 20px;
+}

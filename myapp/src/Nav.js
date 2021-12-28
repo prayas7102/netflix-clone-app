@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faSlidersH } from '@fortawesome/free-solid-svg-icons'
 import './Nav.css';
-function Nav() {
+function Nav({islogin=0}) {
     const [show,handleShow]=useState(false);
     useEffect(() => {
         window.addEventListener("scroll",()=>{
@@ -19,7 +19,7 @@ function Nav() {
     return (
         <div className='nav'>
             <img className='nav__logo' src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg" alt="netflix logo"/>
-            <div className='nav__avatar'><FontAwesomeIcon icon={faSlidersH} color='white'/></div>
+            {(!islogin)?<div className='nav__avatar'><FontAwesomeIcon icon={faSlidersH} color='white'/></div>:<div className='nav__avatar'><button>Login</button></div>}
         </div>
     )
 }

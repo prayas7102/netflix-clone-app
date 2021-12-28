@@ -1,22 +1,17 @@
 import './App.css';
-import Row from './row';
-import requests from './request';
-import Banner from './banner';
-import Nav from './Nav';
+import Home from './Home';
+import LoginScreen from './LoginScreen';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 function App() {
   const isLargeRow=1;
+  const user=0;
   return (
     <div className='app'>
-      <Nav/>
-      <Banner/>
-     <Row title="Netflix Orignals" fetchUrl={requests.fetchNetflixOrignals} isLargeRow/>
-     <Row title="Trending Now" fetchUrl={requests.fetchTrending}/>
-     <Row title="Top Rated" fetchUrl={requests.fetchTopRated}/>
-     <Row title="Action Movies" fetchUrl={requests.fetchActionMovies}/>
-     <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}/>
-     <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies}/>
-     <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies}/>
-     <Row title="Documnetaries" fetchUrl={requests.fetchDocumentaries}/>
+      <Router>
+      <Routes>
+        {(user)?<Route path="/" element={<Home />} />:<Route path="/" element={<LoginScreen/>}/>}
+      </Routes>
+      </Router>      
     </div>
   );
 }
