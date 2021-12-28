@@ -2,6 +2,7 @@ import './App.css';
 import Row from './row';
 import requests from './request';
 import Banner from './banner';
+import Nav from './Nav';
 function App() {
   const isLargeRow=1;
   return (
