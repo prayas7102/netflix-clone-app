@@ -9,15 +9,15 @@ function LoginScreen() {
     return (
         <div className='loginscreen'>
             <Nav islogin/>
-            <div class="gradient"></div>
+            <div className="gradient"></div>
             <div className='body'>
                 {signIn ? <SignUp/>:(
                 <>
                 <h1>Unlimited TV programs and more...</h1>
                 <div className='login_input'>
-                    <div class="input-group mb-3">
-		                 <input class="form-control" type="text" id="search" placeholder="Search Movies" name="[search]" />
-		                 <button type="submit" class="btn btn-danger" onClick={()=>setsignIn(true)}>Submit</button>
+                    <div className="input-group mb-3">
+		                 <input className="form-control" type="text" id="search" placeholder="Search Movies" name="[search]" />
+		                 <button type="submit" className="btn btn-danger" onClick={()=>setsignIn(true)}>Submit</button>
 	                </div>
                 </div>
                 </>
