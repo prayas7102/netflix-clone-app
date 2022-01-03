@@ -31,7 +31,7 @@ const handleClick=(m)=>{
         .then((url)=>{
             const urlParam=new URLSearchParams(new URL(url).search);
             setTrailerUrl(urlParam.get("v"));
-            console.log(url)
+            // console.log(url)
             sett("");
         })
         .catch((e)=>sett(m.name))

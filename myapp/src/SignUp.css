@@ -16,3 +16,8 @@
 u{
     cursor: pointer;
 }
+@media screen and (min-width: 400px) {
+    .signUpScreen{
+        margin-left: 8rem;     
+    }
+  }
