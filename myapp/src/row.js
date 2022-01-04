@@ -23,7 +23,6 @@ const opts={
 };
 
 const handleClick=(m)=>{
-    // console.log(m)
     if(trailerUrl){
         setTrailerUrl("");
     }else{
@@ -49,7 +48,6 @@ const handleClick=(m)=>{
                     return (<img key={m.id} src={baseurl+m.backdrop_path} onClick={()=>handleClick(m)} className='row__poster' alt={m.name}/>) 
                 }})}
             </div>
-            {/* <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div> */}
             {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div>Trailer not available for the movie {t}</div>} 
         </div>
         
