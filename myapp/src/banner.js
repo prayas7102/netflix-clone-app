@@ -49,7 +49,7 @@ function Banner() {
                 <div className='banner--fadeBottom'></div>
             </div>   
         </div>
-        {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div>Trailer not available for the movie {t}</div>}         
+        {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div className="list-group-item list-group-item-action list-group-item-danger">Trailer not available for the movie {t}</div>}         
         </div>
     )
 }

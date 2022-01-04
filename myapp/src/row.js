@@ -48,7 +48,7 @@ const handleClick=(m)=>{
                     return (<img key={m.id} src={baseurl+m.backdrop_path} onClick={()=>handleClick(m)} className='row__poster' alt={m.name}/>) 
                 }})}
             </div>
-            {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div>Trailer not available for the movie {t}</div>} 
+            {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div className="list-group-item list-group-item-action list-group-item-danger">Trailer not available for the movie {t}</div>} 
         </div>
         
     )

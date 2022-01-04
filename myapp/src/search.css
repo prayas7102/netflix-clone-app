@@ -1,8 +1,8 @@
 .column{
-    text-align: center;
-    margin-left: 30rem;
+    margin-left: 16rem;
 }
-.image{
-    height:300px;
-    display:block
-}
+@media (min-width: 225.98px) and (max-width: 575.98px){ 
+    .column{
+        margin-right: 25rem;
+    }
+ }
