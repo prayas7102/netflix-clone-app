@@ -7,5 +7,7 @@ background-color:#111;}
 .nav__avatar {
 position: fixed; right: 20px;
 width: 30px;
-
+}
+.search{
+    position: fixed; width: 300px;
 }

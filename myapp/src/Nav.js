@@ -29,7 +29,7 @@ function Nav({islogin=0}) {
         <div className={(show)?'nav__black' :'nav'}>
             <img className='nav__logo' src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg" alt="netflix logo"/>
                 <div className='login_input' style={{marginLeft:"350px"}}>
-                    <form className="input-group mb-3" onSubmit={()=>{Navigate('/movieSearch/'+name)}} >
+                    <form className="search input-group mb-3" onSubmit={()=>{Navigate('/movieSearch/'+name)}} >
 		                 <input className="form-control" type="text" id="search" placeholder="Search Movies" onChange={(e)=>{e.preventDefault();setname(e.target.value)}}/>
 		                 <input type="submit" className="btn btn-danger" />
 	                </form>

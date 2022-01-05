@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import 'firebase/compat/firestore';
+//  import { getFirestore, collection, addDoc, getDocs } from "@firebase/firestore/compat";
 const firebaseConfig = {
     apiKey: "AIzaSyBPMexPTruWARC6rtoiAujHtfaXYLaYZtg",
     authDomain: "netflix-clone-5be9f.firebaseapp.com",
@@ -14,5 +14,8 @@ const firebaseConfig = {
   const firebaseapp=firebase.initializeApp(firebaseConfig);
   const db=firebaseapp.firestore();
   const auth = firebase.auth();
+  export const database=firebase.getFirestore();
+  export const addDoc=firebase.addDoc();
+  export const collection=firebase.collection();
   export {auth};
   export default db;

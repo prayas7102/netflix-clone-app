@@ -8,7 +8,6 @@ function LoginScreen() {
     const [signIn, setsignIn] = useState(true)
     return (
         <div className='loginscreen'>
-            <Nav islogin/>
             <div className="gradient"></div>
             <div className='body'>
                 {signIn ? <SignUp/>:(

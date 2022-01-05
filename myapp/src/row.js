@@ -1,10 +1,25 @@
-import React from 'react'
+import React from 'react';
+// import {database} from './_Firebase';
+// import firebase from 'firebase/compat/app';import 'firebase/compat/firestore';
+
 import './row.css';
 import {useEffect,useState} from 'react';
 import instance from './axios';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 const baseurl="https://image.tmdb.org/t/p/w500";
+// const database=firebase.getFirestore();
+//  const addDoc=firebase.addDoc();
+//  const collection=firebase.collection();
+const firebaseConfig = {
+    apiKey: "AIzaSyBPMexPTruWARC6rtoiAujHtfaXYLaYZtg",
+    authDomain: "netflix-clone-5be9f.firebaseapp.com",
+    projectId: "netflix-clone-5be9f",
+    storageBucket: "netflix-clone-5be9f.appspot.com",
+    messagingSenderId: "124797017633",
+    appId: "1:124797017633:web:c78f0de8a8060914e9cd60",
+    measurementId: "G-EKWX062P41"
+  };
 function Row({title, fetchUrl,isLargeRow=false}) {
     let [t, sett] = useState("")
     const [movie, setmovie] = useState([]);
@@ -30,12 +45,19 @@ const handleClick=(m)=>{
         .then((url)=>{
             const urlParam=new URLSearchParams(new URL(url).search);
             setTrailerUrl(urlParam.get("v"));
-            // console.log(url)
             sett("");
         })
         .catch((e)=>sett(m.name))
     }
-    
+//    async function movieList(){
+//     const docRef = await addDoc(collection(database, "users"), {
+//         first: "Alan",
+//         middle: "Mathison",
+//         last: "Turing",
+//         born: 1912
+//       });
+//    }
+//     movieList();
 }
     return (
         <div className='row'>
