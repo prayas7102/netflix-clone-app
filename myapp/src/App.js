@@ -14,7 +14,6 @@ function App() {
   const user = useSelector(selectUser);
   const dispatch=useDispatch();
   useEffect(()=>{
-    console.log('hi')
     const unsubscribe=auth.onAuthStateChanged((userAuth)=>{
       if(userAuth){
         dispatch(login({uid:userAuth.uid,email: userAuth.email}));
@@ -28,7 +27,6 @@ function App() {
     <div className='app'>
       <Router>
       <Routes>
-        {console.log(user)}
         {(user.user)?(<><Route path="/" element={<Home/>} /><Route path="/cart" element={<Cart/>} /><Route path="/profile" element={<Profile/>}/><Route path="/movieSearch/:name" element={<MovieSeacrh/>}/></>):(<><Route exact path="/" element={<LoginScreen/>}/></>)}
       </Routes>
       </Router>      

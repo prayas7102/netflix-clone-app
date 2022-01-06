@@ -16,7 +16,10 @@
     margin-left: 10px;
     cursor: pointer;
     transition: transform 450ms; }
-.small_icon:hover {
+    .large_icon:visited,.small_icon:visited{
+        color: red;
+    }
+    .small_icon:hover {
     transform: scale(2);color: red;}
 .large_icon{
     height: 12px; margin-top: 5px;cursor: pointer;margin-left: 35px;color: red;transition: transform 450ms;

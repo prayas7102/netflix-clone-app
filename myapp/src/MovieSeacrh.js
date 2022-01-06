@@ -3,7 +3,6 @@ import {useParams} from "react-router-dom";
 import axios from 'axios';
 import './search.css';
 import {useEffect,useState} from 'react';
-import movieTrailer from 'movie-trailer';
 var i=0;
 const baseurl="https://image.tmdb.org/t/p/w500";
  function MovieSeacrh (){
@@ -13,6 +12,7 @@ const baseurl="https://image.tmdb.org/t/p/w500";
     useEffect(()=>{
         async function findMovie(name){
             const {data} = await  axios.get('https://api.themoviedb.org/3/search/movie?query='+name+'&api_key=615da8f58af156f2d18ac5e717987220&language=en-US&page=1')
+            
             setMovie(data.results);
         }
         findMovie(name)

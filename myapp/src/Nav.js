@@ -8,7 +8,6 @@ import {useNavigate} from "react-router-dom";
 
 function Nav({islogin=0}) {
     islogin=useSelector(selectUser);
-    console.log(islogin.user.email)
     const Navigate=useNavigate();
     const [name,setname]=useState("");
     const [show,handleShow]=useState(false);

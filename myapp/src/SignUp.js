@@ -11,7 +11,7 @@ function SignUp() {
         emailRef.current.value,
         password.current.value
       )
-      .then((user)=>{console.log(user)})
+      .then((user)=>{})
       .catch((e)=>{alert(e.message)})
     };
     const signin=(e)=>{
@@ -20,7 +20,7 @@ function SignUp() {
         emailRef.current.value,
         password.current.value
       )
-      .then((user)=>{console.log(user)})
+      .then((user)=>{})
       .catch((e)=>{alert(e.message)})
     };
     return (

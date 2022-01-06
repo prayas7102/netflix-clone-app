@@ -4,7 +4,10 @@ import instance from './axios';
 import requests from './request';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import {useNavigate} from "react-router-dom";
+
 function Banner() {
+    const Navigate=useNavigate();
     const [trailerUrl,setTrailerUrl]=useState("");
     let [t, sett] = useState("")
     const [movie,setmovie]=useState([]);
@@ -25,7 +28,6 @@ function Banner() {
         }else{
             movieTrailer( m.name, { tmdbId: m.id } ) 
             .then((url)=>{
-                console.log(url)
                 const urlParam=new URLSearchParams(new URL(url).search);
                 setTrailerUrl(urlParam.get("v"));
                 sett("");
@@ -43,7 +45,7 @@ function Banner() {
                 <h1>{movie?.title || movie?.name || movie?.orignal_name}</h1>
                 <div className='banner__buttons'>
                     <button className='banner__button' onClick={()=>{PlayMovie(movie)}}>Play </button>
-                    <button className='banner__button'>My List </button>
+                    <button className='banner__button' onClick={()=>{Navigate('/cart')}}>My List </button>
                 </div>
                 <h1 className='banner__description'>{truncate(movie?.overview,150)}</h1>    
                 <div className='banner--fadeBottom'></div>

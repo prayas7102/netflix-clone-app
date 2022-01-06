@@ -8,7 +8,8 @@ import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 const baseurl="https://image.tmdb.org/t/p/w500";
 function Row({title, fetchUrl,isLargeRow=false}) {
-    let [t, sett] = useState("")
+    let [t, sett] = useState("");
+    let [p,setp]=useState("");
     const [movie, setmovie] = useState([]);
     const [trailerUrl,setTrailerUrl]=useState("");
     useEffect(() => {
@@ -37,10 +38,12 @@ const handleClick=(m)=>{
         .catch((e)=>sett(m.name))
     }
 }
+var arr=[];
 const handleCart=(m)=>{
-    var arr=[]
     arr.push(m);
     localStorage.setItem('Netflixclone',JSON.stringify(arr));
+    if(m.name){setp(m.name);}
+    else{setp(m.title)}
 }
     return (
         <div className='row'>
@@ -51,14 +54,16 @@ const handleCart=(m)=>{
                         return (
                         <div>
                         <img key={m.id} onClick={()=>handleClick(m)} src={baseurl+m.poster_path} className='row__posterLarge' alt={m.name}/>
-                        <div className='large_icon'>
-                            <div onClick={()=>handleCart(m)}><FontAwesomeIcon icon={faCartPlus} color='white'/> Add to Cart</div>
+                        <div className='large_icon' >
+                            <div onClick={()=>handleCart(m)} >
+                                <FontAwesomeIcon icon={faCartPlus} color='white' /> Add to Cart</div>
                             </div>
                         </div>);
                     }else{
-                    return (<><FontAwesomeIcon className='small_icon' icon={faCartPlus} color='white'/><img key={m.id} className='row__poster' src={baseurl+m.backdrop_path} onClick={()=>handleClick(m)} alt={m.name}/></>) 
+                    return (<><FontAwesomeIcon onClick={()=>handleCart(m)} className='small_icon' icon={faCartPlus} color='white'/><img key={m.id} className='row__poster' src={baseurl+m.backdrop_path} onClick={()=>handleClick(m)} alt={m.name}/></>) 
                 }})}
             </div>
+            {(p)?(<div>{p} Movie added to your cart list !!</div>):(<div></div>)}
             {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div className="list-group-item list-group-item-action list-group-item-danger">Trailer not available for the movie {t}</div>} 
         </div>
         
