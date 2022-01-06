@@ -1,13 +1,26 @@
 .nav{
-position: fixed; top: 0; width: 100%; padding: 20px; height: 40px; z-index: 1;
-/* Animations */ transition-timing-function: ease-in; transition: all 0.55;}
+position: fixed; top: 0; width: 100%; padding: 20px; height: 80px; z-index: 1;
+transition-timing-function: ease-in; transition: all 0.55;background-color:rgba(27, 25, 25, 0.6);
+}
 .nav__black {
 background-color:#111;}
-.nav__logo { position: fixed; left: 20px; width: 80px; object-fit: contain;}
+.nav__logo { position: fixed; left: 20px; width: 80px; object-fit: contain;height: 40px;}
 .nav__avatar {
 position: fixed; right: 20px;
-width: 30px;
+width: 30px; color: red;cursor: pointer;transition: transform 450ms;
+}
+.nav__avatar:hover{
+    transform: scale(1.09);
 }
 .search{
-    position: fixed; width: 300px;
+    position: fixed; width: 300px; 
+}
+.cart{
+    right:200px;position: fixed;color: red; cursor: pointer;transition: transform 450ms;
+}
+.cart:hover{
+    transform: scale(1.09);
+}
+.text{
+    right:80px;position: fixed;color: red; 
 }

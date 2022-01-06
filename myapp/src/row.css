@@ -3,10 +3,23 @@
 .row__posters::-webkit-scrollbar {
     display: none;}
 .row__poster {
-    object-fit: contain; width: 100%; max-height: 100px; margin-right: 10px; transition: transform 450ms;}
+     width: 100%; max-height: 100px; margin-right: 10px; transition: transform 450ms;}
 .row__poster:hover {
     transform: scale(1.09);}
 .row__posterLarge {
     max-height: 250px;}
 .row__posterLarge:hover {
     transform: scale(1.09);}
+.small_icon{
+    height: 12px; margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 450ms; }
+.small_icon:hover {
+    transform: scale(2);color: red;}
+.large_icon{
+    height: 12px; margin-top: 5px;cursor: pointer;margin-left: 35px;color: red;transition: transform 450ms;
+}
+.large_icon:hover {
+    transform: scale(1.09);color: red;}

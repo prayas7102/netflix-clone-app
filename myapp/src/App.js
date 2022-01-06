@@ -8,6 +8,7 @@ import { useEffect} from 'react';
 import {useSelector,useDispatch } from 'react-redux';
 import {login,logout,selectUser} from './userSlice'
 import MovieSeacrh from './MovieSeacrh';
+import Cart from './Cart';
 function App() {
   const isLargeRow=1;
   const user = useSelector(selectUser);
@@ -28,7 +29,7 @@ function App() {
       <Router>
       <Routes>
         {console.log(user)}
-        {(user.user)?(<><Route path="/" element={<Home/>} /><Route path="/profile" element={<Profile/>}/><Route path="/movieSearch/:name" element={<MovieSeacrh/>}/></>):(<><Route exact path="/" element={<LoginScreen/>}/></>)}
+        {(user.user)?(<><Route path="/" element={<Home/>} /><Route path="/cart" element={<Cart/>} /><Route path="/profile" element={<Profile/>}/><Route path="/movieSearch/:name" element={<MovieSeacrh/>}/></>):(<><Route exact path="/" element={<LoginScreen/>}/></>)}
       </Routes>
       </Router>      
     </div>
