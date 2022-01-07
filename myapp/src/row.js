@@ -63,10 +63,12 @@ const handleCart=(m)=>{
                     return (<><FontAwesomeIcon onClick={()=>handleCart(m)} className='small_icon' icon={faCartPlus} color='white'/><img key={m.id} className='row__poster' src={baseurl+m.backdrop_path} onClick={()=>handleClick(m)} alt={m.name}/></>) 
                 }})}
             </div>
-            {(p)?(<div>{p} Movie added to your cart list !!</div>):(<div></div>)}
-            {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: <div className="list-group-item list-group-item-action list-group-item-danger">Trailer not available for the movie {t}</div>} 
+            {(p)?(<div className="list-group-item list-group-item-action list-group-item-success" style={{textAlign:"center"}}>
+                {p} Movie added to your cart list !!</div>):
+                (<div></div>)}
+            {(!t)? <div>{trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}</div>: 
+            <div className="list-group-item list-group-item-action list-group-item-danger" style={{textAlign:"center"}}>Trailer not available for the movie {t}</div>} 
         </div>
-        
     )
 }
 export default Row;

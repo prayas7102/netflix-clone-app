@@ -28,12 +28,12 @@ function SignUp() {
             <form>
             <div className="mb-3">
                <label  className="form-label">Email address</label>
-               <input type="email" ref={emailRef} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+               <input type="email" ref={emailRef} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={'abc@gmail.com'}/>
             <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div className="mb-3">
                <label  className="form-label">Password</label>
-               <input ref={password} type="password" className="form-control" id="exampleInputPassword1"/>
+               <input ref={password} type="password" className="form-control" id="exampleInputPassword1" value={'abcdef'}/>
             </div>
             <button type="submit" className="btn btn-primary" onClick={signin}>Submit</button>
             </form>

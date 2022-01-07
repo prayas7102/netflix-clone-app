@@ -6,7 +6,6 @@ function Cart() {
     const baseurl="https://image.tmdb.org/t/p/w500";
     let [movie,setMovie]=useState([]);
     movie=JSON.parse(localStorage.getItem('Netflixclone'));
-    movie)
     function deleteMovie(m){
         var index = movie.indexOf(m);
     if (index > -1) {
