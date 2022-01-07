@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import axios from 'axios';
 import './search.css';
 import {useEffect,useState} from 'react';
+import swal from 'sweetalert';
 const baseurl="https://image.tmdb.org/t/p/w500";
  function MovieSeacrh (){
     let { name } = useParams();
@@ -21,7 +22,14 @@ const baseurl="https://image.tmdb.org/t/p/w500";
             await axios.get('https://api.themoviedb.org/3/movie/'+m.id+'/videos?api_key=615da8f58af156f2d18ac5e717987220&language=en-US')
             .then((data)=>{
                 let str= "https://www.youtube.com/watch?v="+data.data.results[0].key;
-                alert('Trailer at '+str);
+                const el = document.createElement('a')
+                el.innerHTML = "<a class='btn btn-danger' href="+str+">Click here</a>"
+                swal({
+                    title: "Click below for trailer",
+                    content: el,
+                    dangerMode: true,
+                    button: "Exit",
+                  });
             })
             .catch(()=>{alert('Trailer not available');})
     }

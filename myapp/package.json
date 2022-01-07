@@ -21,6 +21,7 @@
     "react-youtube": "^7.13.1",
     "stream-chat": "^5.0.1",
     "stream-chat-react": "^6.12.2",
+    "sweetalert": "^2.1.2",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.2"
   },

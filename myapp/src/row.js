@@ -6,6 +6,7 @@ import {useEffect,useState} from 'react';
 import instance from './axios';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+var arr=[];
 const baseurl="https://image.tmdb.org/t/p/w500";
 function Row({title, fetchUrl,isLargeRow=false}) {
     let [t, sett] = useState("");
@@ -38,7 +39,6 @@ const handleClick=(m)=>{
         .catch((e)=>sett(m.name))
     }
 }
-var arr=[];
 const handleCart=(m)=>{
     arr.push(m);
     localStorage.setItem('Netflixclone',JSON.stringify(arr));

@@ -6,3 +6,20 @@
         margin-right: 25rem;
     }
  }
+.swal-modal {
+    background-color: rgba(29, 21, 21, 0.69);
+    border: 3px solid white;color: blanchedalmond;
+  }
+.swal-title {
+      color: white;
+  }
+
+.swal-text {
+    background-color: #FEFAE3;
+    padding: 17px;
+    border: 1px solid #F0E1A1;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #61534e;
+  }
